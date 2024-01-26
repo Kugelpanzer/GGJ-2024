@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Dodge the Creeps"
+config/name="Make me laugh OMG"
 config/description="This is a simple game where your character must move
 and avoid the enemies for as long as possible.
 
@@ -19,7 +19,7 @@ tutorial in the documentation. For more details, consider
 following the tutorial in the documentation."
 config/tags=PackedStringArray("2d", "demo", "official")
 run/main_scene="res://Main.tscn"
-config/features=PackedStringArray("4.1")
+config/features=PackedStringArray("4.2")
 config/icon="res://icon.webp"
 
 [debug]
