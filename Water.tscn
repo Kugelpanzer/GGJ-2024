@@ -7,5 +7,6 @@
 [node name="Water" type="Node2D"]
 
 [node name="WhitePixel" type="Sprite2D" parent="."]
+modulate = Color(0.0666667, 0.552941, 0.980392, 0.501961)
 material = SubResource("CanvasItemMaterial_lk73f")
 texture = ExtResource("1_eyseq")

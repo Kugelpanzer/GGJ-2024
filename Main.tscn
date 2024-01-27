@@ -21,8 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.509804, 0.509804, 0.509804, 1)
 
-[node name="Player" parent="." instance=ExtResource("3")]
-
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -35,6 +33,13 @@ one_shot = true
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(-200, 500)
 
+[node name="Water" parent="." instance=ExtResource("7_bbi0j")]
+z_index = 2
+script = ExtResource("8_ofdqp")
+
+[node name="Player" parent="." instance=ExtResource("3")]
+z_index = 1
+
 [node name="HUD" parent="." instance=ExtResource("4")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -43,11 +48,8 @@ stream = ExtResource("5")
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6")
 
-[node name="Water" parent="." instance=ExtResource("7_bbi0j")]
-script = ExtResource("8_ofdqp")
-
-[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
