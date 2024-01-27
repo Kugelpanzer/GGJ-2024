@@ -22,6 +22,7 @@ func new_game():
 
 
 func _on_MobTimer_timeout():
+	"""
 	# Create a new instance of the Mob scene.
 	var mob = mob_scene.instantiate()
 
@@ -45,6 +46,7 @@ func _on_MobTimer_timeout():
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
+	"""
 
 func _on_ScoreTimer_timeout():
 	score += 1

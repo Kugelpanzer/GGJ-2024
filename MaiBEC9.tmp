@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://rkdnhqgf2hpj" path="res://Mob.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://4vwrqjegqwpj" path="res://Dolphin.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://4vwrqjegqwpj" path="res://Player.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ccqoreueuxdb7" path="res://HUD.tscn" id="4"]
 [ext_resource type="AudioStream" uid="uid://q2pf4fr8d0ks" path="res://art/House In a Forest Loop.ogg" id="5"]
 [ext_resource type="AudioStream" uid="uid://dw26fpygeag8o" path="res://art/gameover.wav" id="6"]
 
 [sub_resource type="Curve2D" id="1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 1323, 917, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
 
@@ -18,11 +18,9 @@ script = ExtResource("1")
 mob_scene = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_right = 2.756
-anchor_bottom = 1.267
-offset_right = 0.119995
-offset_bottom = -0.240051
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.219608, 0.372549, 0.380392, 1)
@@ -45,7 +43,6 @@ position = Vector2(240, 450)
 curve = SubResource("1")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-scale = Vector2(2.44, 1)
 
 [node name="HUD" parent="." instance=ExtResource("4")]
 
