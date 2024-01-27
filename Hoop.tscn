@@ -41,8 +41,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="2"]
-radius = 37.0
-height = 100.0
+radius = 4.99998
+height = 20.0
 
 [node name="Hoop" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
@@ -50,13 +50,26 @@ gravity_scale = 0.0
 script = ExtResource("1_nxtko")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("1")
 animation = &"fly"
 frame_progress = 0.632875
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="FailUp" type="CollisionShape2D" parent="."]
+position = Vector2(3, -76)
 rotation = 1.5708
+shape = SubResource("2")
+
+[node name="FailDown" type="CollisionShape2D" parent="."]
+position = Vector2(2, 80)
+rotation = 1.5708
+shape = SubResource("2")
+
+[node name="Success" type="CollisionShape2D" parent="."]
+position = Vector2(4, 6.82121e-13)
+rotation = 1.5708
+scale = Vector2(13.9963, 1.63406)
 shape = SubResource("2")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

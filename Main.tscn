@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyfwty2q3rdse"]
+[gd_scene load_steps=10 format=3 uid="uid://cyfwty2q3rdse"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://rkdnhqgf2hpj" path="res://Hoop.tscn" id="2"]
@@ -10,10 +10,11 @@
 [ext_resource type="Script" path="res://Water.gd" id="8_ofdqp"]
 
 [sub_resource type="Curve2D" id="1"]
+bake_interval = 19.15
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1215.5, 83.0487, 0, 0, 0, 0, 1449.57, 214.825, 0, 0, 0, 0, 9.4469, 260.586, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1236.49, 34.3212, 0, 0, 0, 0, 1802.26, 22.4571, 0, 0, 0, 0, 1871.53, 74.9981, 0, 0, 0, 0, 1765.52, 114.404, 0, 0, 0, 0, 1476.86, 120.76, 0, 0, 0, 0, 940.491, 117.794, 0, 0, 0, 0, 869.167, -48.9821, 0, 0, 0, 0, 353.734, 84.7436, 0, 0, 0, 0, 146.952, 138.132, 0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 11
 
 [node name="Main" type="Node"]
 script = ExtResource("1")
@@ -42,11 +43,11 @@ one_shot = true
 position = Vector2(240, 450)
 
 [node name="MobPath" type="Path2D" parent="."]
-scale = Vector2(0.952694, 2.36006)
+scale = Vector2(1.14132, 4.0627)
 curve = SubResource("1")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-rotation = 0.0682186
+rotation = 0.0277497
 scale = Vector2(2.44, 1)
 
 [node name="HUD" parent="." instance=ExtResource("4")]
