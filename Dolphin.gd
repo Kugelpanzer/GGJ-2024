@@ -23,12 +23,20 @@ func _ready():
 
 func _process(delta):
 	var direction_to_cursor = get_viewport().get_mouse_position() - position
-	velocity += direction_to_cursor.normalized() * acceleration * delta
+	var acceleration_vector = direction_to_cursor.normalized() * acceleration
 	
-	if velocity.length() >= max_speed:
-		velocity = velocity.normalized() * max_speed
+	"""
+	var angle_of_acceleration = velocity.angle_to(acceleration_vector)
+	if angle_of_acceleration > PI / 4:
+		acceleration_vector.rotated(angle_of_acceleration - PI / 4)
+	elif angle_of_acceleration < -PI / 4:
+		acceleration_vector.rotated(angle_of_acceleration + PI / 4)
+	"""
+	
+	velocity += acceleration_vector * delta
+	
+	velocity = velocity.limit_length(max_speed)
 		
-	print(direction_to_cursor.angle_to(velocity))
 	position += velocity * delta
 	
 	look_at(position + velocity)
