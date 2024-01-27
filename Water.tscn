@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://6ygqq31w6qkf"]
+[gd_scene load_steps=3 format=3 uid="uid://6ygqq31w6qkf"]
+
+[ext_resource type="Texture2D" uid="uid://20w1ggv38arq" path="res://art/WhitePixel.png" id="1_eyseq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lk73f"]
 
 [node name="Water" type="Node2D"]
+
+[node name="WhitePixel" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_lk73f")
+texture = ExtResource("1_eyseq")
