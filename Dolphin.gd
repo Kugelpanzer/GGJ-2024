@@ -5,8 +5,9 @@ signal hit
 
 
 @export var max_speed = 1200 # How fast the player will move (pixels/sec).
+@export var min_speed = 800
 @export var rotation_speed = 1
-@export var acceleration = 2000
+@export var acceleration = 8000
 
 var velocity = Vector2.ZERO
 
@@ -23,19 +24,14 @@ func _ready():
 
 func _process(delta):
 	var direction_to_cursor = get_viewport().get_mouse_position() - position
+	direction_to_cursor += Vector2 (randi_range(-50, 50), randi_range(-50, 50))
 	var acceleration_vector = direction_to_cursor.normalized() * acceleration
-	
-	"""
-	var angle_of_acceleration = velocity.angle_to(acceleration_vector)
-	if angle_of_acceleration > PI / 4:
-		acceleration_vector.rotated(angle_of_acceleration - PI / 4)
-	elif angle_of_acceleration < -PI / 4:
-		acceleration_vector.rotated(angle_of_acceleration + PI / 4)
-	"""
-	
+		
 	velocity += acceleration_vector * delta
 	
 	velocity = velocity.limit_length(max_speed)
+	if velocity.length() < min_speed:
+		velocity = velocity.normalized() * min_speed
 		
 	position += velocity * delta
 	
