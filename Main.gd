@@ -1,6 +1,7 @@
 extends Node
 
 @export var mob_scene: PackedScene
+@export var water_height =540
 var score
 
 func game_over():
@@ -12,7 +13,7 @@ func game_over():
 
 
 func new_game():
-	get_tree().call_group(&"mobs", &"queue_free")
+	#get_tree().call_group(&"mobs", &"queue_free")
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
@@ -20,6 +21,12 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	$Music.play()
 
+
+func _process(delta):
+	if $Player.position.y < water_height:
+		$Player.in_water = false
+	else:
+		$Player.in_water = true
 
 func _on_MobTimer_timeout():
 	"""
@@ -56,3 +63,4 @@ func _on_ScoreTimer_timeout():
 func _on_StartTimer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()
+	
