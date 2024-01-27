@@ -4,6 +4,7 @@ extends Node
 @export var water_height =540
 @export var hoop_comp = Array()
 @export var x_offset = 100
+@export var max_hoops = 1
 var score
 
 var setups : Array = []
@@ -38,7 +39,11 @@ func _process(delta):
 
 func _on_MobTimer_timeout():
 	# Create a new instance of the Mob scene.
+	
+	if max_hoops <= current_hoop_list.size():
+		return
 	var mob = mob_scene.instantiate()
+	current_hoop_list.append(mob)
 
 	# Choose a random location on Path2D.
 	var mob_spawn_location = get_node(^"MobPath/MobSpawnLocation")
