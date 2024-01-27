@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyfwty2q3rdse"]
+[gd_scene load_steps=10 format=3 uid="uid://cyfwty2q3rdse"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://rkdnhqgf2hpj" path="res://Hoop.tscn" id="2"]
@@ -9,9 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://bpcm67gm8sok3" path="res://Water.tscn" id="7_bbi0j"]
 [ext_resource type="Script" path="res://Water.gd" id="8_ofdqp"]
 
+[sub_resource type="Curve2D" id="Curve2D_yqfxe"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 324, 179, 0, 0, 0, 0, 234, 502, 0, 0, 0, 0, 1007, 260, 0, 0, 0, 0, 1733, 287, 0, 0, 0, 0, 1415, 93, 0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
 [node name="Main" type="Node"]
 script = ExtResource("1")
-mob_scene = ExtResource("2")
+hoop_scene = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -47,6 +53,13 @@ stream = ExtResource("5")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6")
+
+[node name="HoopPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yqfxe")
+
+[node name="HoopSpawnLocation" type="PathFollow2D" parent="HoopPath"]
+position = Vector2(324, 179)
+rotation = 1.84254
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

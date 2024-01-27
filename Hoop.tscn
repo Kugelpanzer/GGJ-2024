@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rkdnhqgf2hpj"]
+[gd_scene load_steps=10 format=3 uid="uid://rkdnhqgf2hpj"]
 
 [ext_resource type="Script" path="res://Hoop.gd" id="1_nxtko"]
 [ext_resource type="Texture2D" uid="uid://dtvkfv27tutt0" path="res://art/DolphinHoopNeo.png" id="2_5i7wl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://booij5t7h4efb" path="res://art/enemyWalking_2.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://5lvm88ij4jqn" path="res://art/enemySwimming_1.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://bng45cvsgufqc" path="res://art/enemySwimming_2.png" id="7"]
+[ext_resource type="Script" path="res://Collision.gd" id="7_e8c3r"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -45,6 +46,7 @@ radius = 4.99998
 height = 20.0
 
 [node name="Hoop" type="RigidBody2D" groups=["mobs"]]
+collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_nxtko")
@@ -71,6 +73,7 @@ position = Vector2(4, 6.82121e-13)
 rotation = 1.5708
 scale = Vector2(13.9963, 1.63406)
 shape = SubResource("2")
+script = ExtResource("7_e8c3r")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

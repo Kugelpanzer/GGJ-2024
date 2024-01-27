@@ -1,11 +1,13 @@
 extends Node
 
-@export var mob_scene: PackedScene
+@export var hoop_scene: PackedScene
 @export var water_height =540
 @export var hoop_comp = Array()
 @export var x_offset = 100
 @export var max_hoops = 1
 var score
+
+var current_hoop_list : Array = []
 
 func game_over():
 	$ScoreTimer.stop()
@@ -32,35 +34,23 @@ func _process(delta):
 		$Player.in_water = true
 
 func _on_MobTimer_timeout():
-	"""
+
 	# Create a new instance of the Mob scene.
 	
 	if max_hoops <= current_hoop_list.size():
 		return
-	var mob = mob_scene.instantiate()
-	current_hoop_list.append(mob)
+	var hoop = hoop_scene.instantiate()
+	current_hoop_list.append(hoop)
 
 	# Choose a random location on Path2D.
-	var mob_spawn_location = get_node(^"MobPath/MobSpawnLocation")
-	mob_spawn_location.progress = randi()
+	var hoop_spawn_location = get_node(^"HoopPath/HoopSpawnLocation")
+	hoop_spawn_location.progress = randi()
 
-	# Set the mob's direction perpendicular to the path direction.
-	var direction = mob_spawn_location.rotation + PI / 2
-
-	# Set the mob's position to a random location.
-	mob.position = mob_spawn_location.position
-
-	# Add some randomness to the direction.
-	direction += randf_range(-PI / 4, PI / 4)
-	mob.rotation = direction
-
-	# Choose the velocity for the mob.
-	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
-	mob.linear_velocity = velocity.rotated(direction)
+	hoop.position = hoop_spawn_location.position
 
 	# Spawn the mob by adding it to the Main scene.
-	add_child(mob)
-	"""
+	add_child(hoop)
+
 
 func _on_ScoreTimer_timeout():
 	score += 1
