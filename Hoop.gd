@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 func _ready():
-	connect("body_entered", Hoop, "_on_body_entered")
+	#connect("body_entered", Hoop, "_on_body_entered")
 	"""
 	$AnimatedSprite2D.play()
 	var mob_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
