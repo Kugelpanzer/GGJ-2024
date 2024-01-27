@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://rkdnhqgf2hpj"]
+[gd_scene load_steps=9 format=3 uid="uid://rkdnhqgf2hpj"]
 
-[ext_resource type="Script" path="res://Mob.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://yqglrrsx7j1f" path="res://art/enemyFlyingAlt_1.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bpot8awhdn6ph" path="res://art/enemyFlyingAlt_2.png" id="3"]
+[ext_resource type="Script" path="res://Hoop.gd" id="1_nxtko"]
+[ext_resource type="Texture2D" uid="uid://dtvkfv27tutt0" path="res://art/DolphinHoopNeo.png" id="2_5i7wl"]
 [ext_resource type="Texture2D" uid="uid://bu4221t7qpa7d" path="res://art/enemyWalking_1.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://booij5t7h4efb" path="res://art/enemyWalking_2.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://5lvm88ij4jqn" path="res://art/enemySwimming_1.png" id="6"]
@@ -12,10 +11,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3")
+"texture": ExtResource("2_5i7wl")
 }],
 "loop": true,
 "name": &"fly",
@@ -45,21 +41,35 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="2"]
-radius = 37.0
-height = 100.0
+radius = 4.99998
+height = 20.0
 
-[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+[node name="Hoop" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1")
+script = ExtResource("1_nxtko")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+position = Vector2(0, -8)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("1")
-animation = &"walk"
+animation = &"fly"
+frame_progress = 0.632875
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="FailUp" type="CollisionShape2D" parent="."]
+position = Vector2(3, -76)
 rotation = 1.5708
+shape = SubResource("2")
+
+[node name="FailDown" type="CollisionShape2D" parent="."]
+position = Vector2(2, 80)
+rotation = 1.5708
+shape = SubResource("2")
+
+[node name="Success" type="CollisionShape2D" parent="."]
+position = Vector2(4, 6.82121e-13)
+rotation = 1.5708
+scale = Vector2(13.9963, 1.63406)
 shape = SubResource("2")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
