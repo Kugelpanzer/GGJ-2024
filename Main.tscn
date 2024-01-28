@@ -50,6 +50,7 @@ point_count = 6
 script = ExtResource("1")
 hoop_scene = ExtResource("2_eygkc")
 smilie_scene = ExtResource("3_mpo2x")
+score_per_hoop = 10.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

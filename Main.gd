@@ -6,8 +6,8 @@ extends Node
 @export var hoop_comp = Array()
 @export var x_offset = 100
 @export var max_hoops = 3
-@export var score_per_hoop = 5
-@export var score_per_second = -1
+@export var score_per_hoop = 8.0
+@export var score_per_second = -1.6
 var score
 var hoops_passed
 
