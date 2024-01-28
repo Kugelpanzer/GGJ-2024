@@ -10,10 +10,11 @@ func _ready():
 func add_object(object):
 	object.my_point = self
 	get_parent().list_of_points.erase(self)
+	#print(get_parent().list_of_points)
 	
 func remove_object():
 	get_parent().list_of_points.append(self)
-	print(get_parent().list_of_points)
+	
 	
 
 

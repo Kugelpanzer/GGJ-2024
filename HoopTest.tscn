@@ -28,6 +28,7 @@ texture = ExtResource("2_10h1h")
 position = Vector2(3, 7)
 rotation = -3.14159
 scale = Vector2(1.49548, 1.11556)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Success"]
 position = Vector2(0.334341, -2.68924)
@@ -38,6 +39,7 @@ script = ExtResource("3_a0oh1")
 [node name="Fail1" type="Area2D" parent="."]
 position = Vector2(2, 89)
 scale = Vector2(1, 0.320001)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fail1"]
 shape = SubResource("CapsuleShape2D_6g3pm")
@@ -46,6 +48,7 @@ script = ExtResource("4_8ghtk")
 [node name="Fail2" type="Area2D" parent="."]
 position = Vector2(2, -68)
 scale = Vector2(1, 0.320001)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fail2"]
 shape = SubResource("CapsuleShape2D_5kxfd")

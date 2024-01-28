@@ -37,7 +37,7 @@ func _process(delta):
 func _on_MobTimer_timeout():
 
 	# Create a new instance of the Mob scene.
-	print(current_hoop_list)
+	#print(current_hoop_list)
 			
 	if max_hoops <= current_hoop_list.size():
 		return

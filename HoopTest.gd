@@ -23,7 +23,7 @@ func check_test():
 
 		queue_free()
 	else:
-		print('final fail \n')
-	success = true
-	fail1 = false
-	fail2 = false
+
+		success = true
+		fail1 = false
+		fail2 = false
