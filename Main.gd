@@ -5,7 +5,10 @@ extends Node
 @export var hoop_comp = Array()
 @export var x_offset = 100
 @export var max_hoops = 3
+@export var score_per_hoop = 5
+@export var score_per_second = -1
 var score
+var hoops_passed
 
 var current_hoop_list : Array = []
 var list_of_points: Array = []
@@ -21,6 +24,7 @@ func game_over():
 func new_game():
 	#get_tree().call_group(&"mobs", &"queue_free")
 	score = 0
+	hoops_passed = 0
 	$Dolphin.start($StartPosition.position)
 	$StartTimer.start()
 	#$HUD.update_score(score)
@@ -33,6 +37,11 @@ func _process(delta):
 		$Dolphin.in_water = false
 	else:
 		$Dolphin.in_water = true
+
+func on_hoop_passed():
+	score += score_per_hoop
+	hoops_passed += 1
+	$HUD.update_score(score)
 
 func _on_MobTimer_timeout():
 
@@ -56,7 +65,7 @@ func _on_MobTimer_timeout():
 
 
 func _on_ScoreTimer_timeout():
-	score += 1
+	score += score_per_second
 	$HUD.update_score(score)
 
 
