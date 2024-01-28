@@ -21,7 +21,7 @@ func game_over():
 func new_game():
 	#get_tree().call_group(&"mobs", &"queue_free")
 	score = 0
-	$Player.start($StartPosition.position)
+	$Dolphin.start($StartPosition.position)
 	$StartTimer.start()
 	#$HUD.update_score(score)
 	#$HUD.show_message("Get Ready")
@@ -29,10 +29,10 @@ func new_game():
 
 
 func _process(delta):
-	if $Player.position.y < water_height:
-		$Player.in_water = false
+	if $Dolphin.position.y < water_height:
+		$Dolphin.in_water = false
 	else:
-		$Player.in_water = true
+		$Dolphin.in_water = true
 
 func _on_MobTimer_timeout():
 

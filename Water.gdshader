@@ -71,6 +71,7 @@ vec4 mainImage( in vec2 _uv )
 void fragment()
 {
 	vec4 water = water_palette(0.4 * UV.y - TIME);
-	vec4 noise = mainImage(vec2 (0.3 * UV.x, 0.1 * UV.y)) * 0.12;
-	COLOR = vec4(water.r + noise.r, water.g + noise.g, water.b + noise.b, water.a);
+	COLOR = water;
+	//vec4 noise = mainImage(vec2 (0.3 * UV.x, 0.1 * UV.y)) * 0.12;
+	//COLOR = vec4(water.r + noise.r, water.g + noise.g, water.b + noise.b, water.a);
 }

@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dur406lftmn7t"]
+[gd_scene load_steps=9 format=3 uid="uid://dur406lftmn7t"]
 
 [ext_resource type="Script" path="res://HoopTest.gd" id="1_jvbjo"]
-[ext_resource type="Texture2D" uid="uid://csqccmephdhj1" path="res://art/DolphinHoopFront.png" id="2_10h1h"]
+[ext_resource type="Texture2D" uid="uid://dtvkfv27tutt0" path="res://art/DolphinHoopNeo.png" id="2_4u1f5"]
 [ext_resource type="Script" path="res://Success.gd" id="3_a0oh1"]
 [ext_resource type="Script" path="res://Fail1.gd" id="4_8ghtk"]
 [ext_resource type="Script" path="res://Fail2.gd" id="5_yml24"]
-[ext_resource type="Texture2D" uid="uid://b8i3gnqsdt4u2" path="res://art/DolphinHoopBack.png" id="6_fcj0k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1me4v"]
 radius = 9.83024
@@ -19,10 +18,9 @@ height = 87.5785
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_jvbjo")
 
-[node name="Front" type="Sprite2D" parent="."]
-z_index = 12
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = ExtResource("2_10h1h")
+texture = ExtResource("2_4u1f5")
 
 [node name="Success" type="Area2D" parent="."]
 position = Vector2(3, 7)
@@ -50,10 +48,6 @@ scale = Vector2(1, 0.320001)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fail2"]
 shape = SubResource("CapsuleShape2D_5kxfd")
 script = ExtResource("5_yml24")
-
-[node name="Back" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("6_fcj0k")
 
 [connection signal="area_entered" from="Success" to="Success/CollisionShape2D" method="_on_success_area_entered"]
 [connection signal="area_exited" from="Success" to="Success/CollisionShape2D" method="_on_success_area_exited"]
