@@ -17,13 +17,14 @@ func _process(delta):
 func check_test():
 	if success && !fail1 && !fail2: 
 		print('final success \n')
+		get_parent().on_hoop_passed()
 		var hoop_list = get_parent().current_hoop_list
 		hoop_list.erase(self)
 		my_point.remove_object()
 
 		queue_free()
 	else:
-
+		get_parent().on_hoop_failed()
 		success = true
 		fail1 = false
 		fail2 = false
