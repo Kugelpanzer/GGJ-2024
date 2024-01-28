@@ -23,6 +23,7 @@ func game_over():
 func game_won():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$HUD.show_game_won()
 	$Music.stop()
 	#$WinSound.play()
 
