@@ -17,7 +17,7 @@ func show_game_over():
 	await get_tree().create_timer(1).timeout
 	$StartButton.show()
 
-func show_game_won()
+func show_game_won():
 	show_message("You Win!")
 	await $MessageTimer.timeout
 	hide_message()
