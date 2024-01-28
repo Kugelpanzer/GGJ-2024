@@ -1,9 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccqoreueuxdb7"]
+[gd_scene load_steps=12 format=3 uid="uid://ccqoreueuxdb7"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cv3b0420e10v2" path="res://art/startDugme.png" id="2_u8rw7"]
 [ext_resource type="Texture2D" uid="uid://mk0s7370h6xv" path="res://art/youWin.png" id="3_cpduw"]
 [ext_resource type="Texture2D" uid="uid://dcfvdui80flkc" path="res://art/youLose.png" id="4_dft3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixqmu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmija"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqni2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wswbx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3bgu"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_fopy7"]
 action = &"start_game"
@@ -51,6 +61,11 @@ offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ixqmu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vmija")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iqni2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wswbx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r3bgu")
 shortcut = SubResource("4")
 icon = ExtResource("2_u8rw7")
 icon_alignment = 1
