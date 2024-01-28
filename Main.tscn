@@ -1,14 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyfwty2q3rdse"]
+[gd_scene load_steps=13 format=3 uid="uid://cyfwty2q3rdse"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dur406lftmn7t" path="res://HoopTest.tscn" id="2_eygkc"]
 [ext_resource type="PackedScene" uid="uid://4vwrqjegqwpj" path="res://Dolphin.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://bjckh578wh7td" path="res://art/pozadinaTileset.png" id="3_cadgb"]
 [ext_resource type="PackedScene" uid="uid://ccqoreueuxdb7" path="res://HUD.tscn" id="4"]
 [ext_resource type="AudioStream" uid="uid://q2pf4fr8d0ks" path="res://art/House In a Forest Loop.ogg" id="5"]
 [ext_resource type="AudioStream" uid="uid://dw26fpygeag8o" path="res://art/gameover.wav" id="6"]
 [ext_resource type="PackedScene" uid="uid://bpcm67gm8sok3" path="res://Water.tscn" id="7_bbi0j"]
 [ext_resource type="Script" path="res://Water.gd" id="8_ofdqp"]
 [ext_resource type="Script" path="res://SpawnPoint.gd" id="9_6f7yk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxo7"]
+texture = ExtResource("3_cadgb")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yn0jr"]
+tile_size = Vector2i(32, 32)
+sources/4 = SubResource("TileSetAtlasSource_8oxo7")
 
 [sub_resource type="Curve2D" id="Curve2D_yqfxe"]
 _data = {
@@ -28,7 +45,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.509804, 0.509804, 0.509804, 1)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="BackgroundTileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_yn0jr")
 format = 2
 
 [node name="MobTimer" type="Timer" parent="."]
