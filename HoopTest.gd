@@ -16,6 +16,10 @@ func _process(delta):
 func check_test():
 	if success && !fail1 && !fail2: 
 		print('final success \n')
+		var hoop_list = get_parent().current_hoop_list
+		hoop_list.erase(self)
+
+		queue_free()
 	else:
 		print('final fail \n')
 	success = true
