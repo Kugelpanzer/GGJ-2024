@@ -52,6 +52,7 @@ shortcut = SubResource("4")
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
