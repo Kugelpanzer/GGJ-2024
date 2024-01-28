@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6cm6uuh5pjl"]
+
+[ext_resource type="Script" path="res://NewHoop.gd" id="1_jf0d8"]
+[ext_resource type="Texture2D" uid="uid://dtvkfv27tutt0" path="res://art/DolphinHoopNeo.png" id="2_s3tij"]
+
+[node name="NewHoop" type="Node2D"]
+script = ExtResource("1_jf0d8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_s3tij")

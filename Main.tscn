@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cyfwty2q3rdse"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://rkdnhqgf2hpj" path="res://Hoop.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dur406lftmn7t" path="res://HoopTest.tscn" id="2_eygkc"]
 [ext_resource type="PackedScene" uid="uid://4vwrqjegqwpj" path="res://Dolphin.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ccqoreueuxdb7" path="res://HUD.tscn" id="4"]
 [ext_resource type="AudioStream" uid="uid://q2pf4fr8d0ks" path="res://art/House In a Forest Loop.ogg" id="5"]
@@ -17,7 +17,7 @@ point_count = 6
 
 [node name="Main" type="Node"]
 script = ExtResource("1")
-hoop_scene = ExtResource("2")
+hoop_scene = ExtResource("2_eygkc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

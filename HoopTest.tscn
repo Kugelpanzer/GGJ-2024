@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dur406lftmn7t"]
+
+[ext_resource type="Script" path="res://HoopTest.gd" id="1_jvbjo"]
+[ext_resource type="Texture2D" uid="uid://dtvkfv27tutt0" path="res://art/DolphinHoopNeo.png" id="2_4u1f5"]
+[ext_resource type="Script" path="res://Success.gd" id="3_a0oh1"]
+[ext_resource type="Script" path="res://Fail1.gd" id="4_8ghtk"]
+[ext_resource type="Script" path="res://Fail2.gd" id="5_yml24"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1me4v"]
+radius = 5.06828
+height = 45.2247
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6g3pm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5kxfd"]
+
+[node name="HoopTest" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_jvbjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_4u1f5")
+
+[node name="Success" type="Area2D" parent="."]
+position = Vector2(3, 7)
+rotation = -3.14159
+scale = Vector2(1.49548, 1.11556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Success"]
+scale = Vector2(1.87041, -2.21123)
+shape = SubResource("CapsuleShape2D_1me4v")
+script = ExtResource("3_a0oh1")
+
+[node name="Fail1" type="Area2D" parent="."]
+position = Vector2(2, 89)
+scale = Vector2(1, 0.320001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fail1"]
+shape = SubResource("CapsuleShape2D_6g3pm")
+script = ExtResource("4_8ghtk")
+
+[node name="Fail2" type="Area2D" parent="."]
+position = Vector2(2, -68)
+scale = Vector2(1, 0.320001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fail2"]
+shape = SubResource("CapsuleShape2D_5kxfd")
+script = ExtResource("5_yml24")
+
+[connection signal="area_entered" from="Success" to="Success/CollisionShape2D" method="_on_success_area_entered"]
+[connection signal="area_entered" from="Fail1" to="Fail1/CollisionShape2D" method="_on_fail_1_area_entered"]
+[connection signal="area_entered" from="Fail2" to="Fail2/CollisionShape2D" method="_on_fail_2_area_entered"]
