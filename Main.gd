@@ -20,6 +20,11 @@ func game_over():
 	$Music.stop()
 	$DeathSound.play()
 
+func game_won():
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	$Music.stop()
+	#$WinSound.play()
 
 func new_game():
 	#get_tree().call_group(&"mobs", &"queue_free")
@@ -41,10 +46,54 @@ func _process(delta):
 func on_hoop_passed():
 	score += score_per_hoop
 	hoops_passed += 1
+	if randf() < 0.3:
+		spawn_happy_face()
+	score_update()
+
+func score_update():
 	$HUD.update_score(score)
 
-func _on_MobTimer_timeout():
+	#bad score
+	if score <= -100: game_over()
+	if score <= -80:
+		if randf() < 0.3:
+			spawn_sad_face()
+	if score <= -60:
+		if randf() < 0.3:
+			spawn_sad_face()
+	if score <= -40:
+		if randf() < 0.3:
+			spawn_sad_face()
+	if score <= -20:
+		if randf() < 0.3:
+			spawn_sad_face()
 
+	#good score
+	if score >= 100: game_won()
+	if score >= 80:
+		if randf() < 0.3:
+			spawn_happy_face()
+	if score >= 60:
+		if randf() < 0.3:
+			spawn_happy_face()
+	if score >= 40:
+		if randf() < 0.3:
+			spawn_happy_face()
+	if score >= 20:
+		if randf() < 0.3:
+			spawn_happy_face()
+
+func on_hoop_failed():
+	if randf() < 0.3:
+		spawn_sad_face()
+
+func spawn_happy_face():
+	var face_type = randi_range(1,3)
+
+func spawn_sad_face():
+	var face_type = randi_range(1,3)
+
+func _on_MobTimer_timeout():
 	# Create a new instance of the Mob scene.
 	print(current_hoop_list)
 			
@@ -63,11 +112,9 @@ func _on_MobTimer_timeout():
 	# Spawn the mob by adding it to the Main scene.
 	add_child(hoop)
 
-
 func _on_ScoreTimer_timeout():
 	score += score_per_second
-	$HUD.update_score(score)
-
+	score_update()
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()
