@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://couyhcegeihme"
-path="res://.godot/imported/playerGrey_walk2.png-34d2d916366100182d08037c51884043.ctex"
+uid="uid://b7oeqvp6mxons"
+path="res://.godot/imported/tuzan2.png-45e911ec33f76104c137204d0e0822e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/playerGrey_walk2.png"
-dest_files=["res://.godot/imported/playerGrey_walk2.png-34d2d916366100182d08037c51884043.ctex"]
+source_file="res://art/smajliji/tuzan2.png"
+dest_files=["res://.godot/imported/tuzan2.png-45e911ec33f76104c137204d0e0822e6.ctex"]
 
 [params]
 

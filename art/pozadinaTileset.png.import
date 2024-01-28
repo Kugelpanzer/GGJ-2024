@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ftkxr8r4qghp"
-path="res://.godot/imported/playerGrey_walk1.png-c4773fe7a7bf85d7ab732eb4458c2742.ctex"
+uid="uid://bjckh578wh7td"
+path="res://.godot/imported/pozadinaTileset.png-6d414c6bbec62caca9eda3900075b483.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/playerGrey_walk1.png"
-dest_files=["res://.godot/imported/playerGrey_walk1.png-c4773fe7a7bf85d7ab732eb4458c2742.ctex"]
+source_file="res://art/pozadinaTileset.png"
+dest_files=["res://.godot/imported/pozadinaTileset.png-6d414c6bbec62caca9eda3900075b483.ctex"]
 
 [params]
 

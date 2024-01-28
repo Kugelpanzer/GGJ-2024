@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bng45cvsgufqc"
-path="res://.godot/imported/enemySwimming_2.png-4c0cbc0732264c4ea3290340bd4a0a62.ctex"
+uid="uid://c4tni1ildg0sn"
+path="res://.godot/imported/oblacic4.png-cd9ddd66fc01cd7cea892d8853b6d46e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemySwimming_2.png"
-dest_files=["res://.godot/imported/enemySwimming_2.png-4c0cbc0732264c4ea3290340bd4a0a62.ctex"]
+source_file="res://art/oblacici/oblacic4.png"
+dest_files=["res://.godot/imported/oblacic4.png-cd9ddd66fc01cd7cea892d8853b6d46e.ctex"]
 
 [params]
 
