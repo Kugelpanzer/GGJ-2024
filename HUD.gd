@@ -11,16 +11,18 @@ func hide_message():
 	$MessageLabel.hide()
 
 func show_game_over():
-	show_message("Game Over")
+	$YouLoseMessage.show()
+	$MessageTimer.start()
 	await $MessageTimer.timeout
-	hide_message()
+	$YouLoseMessage.hide()
 	await get_tree().create_timer(1).timeout
 	$StartButton.show()
 
 func show_game_won():
-	show_message("You Win!")
+	$YouWinMessage.show()
+	$MessageTimer.start()
 	await $MessageTimer.timeout
-	hide_message()
+	$YouWinMessage.hide()
 	await get_tree().create_timer(1).timeout
 	$StartButton.show()
 

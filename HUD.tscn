@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccqoreueuxdb7"]
+[gd_scene load_steps=7 format=3 uid="uid://ccqoreueuxdb7"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cv3b0420e10v2" path="res://art/startDugme.png" id="2_u8rw7"]
+[ext_resource type="Texture2D" uid="uid://mk0s7370h6xv" path="res://art/youWin.png" id="3_cpduw"]
+[ext_resource type="Texture2D" uid="uid://dcfvdui80flkc" path="res://art/youLose.png" id="4_dft3b"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_fopy7"]
 action = &"start_game"
@@ -42,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -90.0
+offset_left = -180.0
 offset_top = -200.0
-offset_right = 90.0
-offset_bottom = -144.0
+offset_right = 180.0
+offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 60
@@ -57,6 +59,40 @@ expand_icon = true
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="YouWinMessage" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -120.0
+offset_right = 90.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(90, 14)
+texture = ExtResource("3_cpduw")
+
+[node name="YouLoseMessage" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -120.0
+offset_right = 90.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(90, 14)
+texture = ExtResource("4_dft3b")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
