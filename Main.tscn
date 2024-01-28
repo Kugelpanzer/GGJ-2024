@@ -109,23 +109,23 @@ position = Vector2(242, 148)
 rotation = 0.942
 
 [node name="Point1" type="Node2D" parent="."]
-position = Vector2(273, 279)
+position = Vector2(273, 373)
 script = ExtResource("9_6f7yk")
 
 [node name="Point2" type="Node2D" parent="."]
-position = Vector2(411, 286)
+position = Vector2(496, 214)
 script = ExtResource("9_6f7yk")
 
 [node name="Point3" type="Node2D" parent="."]
-position = Vector2(679, 279)
+position = Vector2(811, 281)
 script = ExtResource("9_6f7yk")
 
 [node name="Point4" type="Node2D" parent="."]
-position = Vector2(943, 279)
+position = Vector2(1134, 241)
 script = ExtResource("9_6f7yk")
 
 [node name="Point5" type="Node2D" parent="."]
-position = Vector2(1142, 285)
+position = Vector2(1459, 352)
 script = ExtResource("9_6f7yk")
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]

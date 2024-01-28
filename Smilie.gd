@@ -15,9 +15,12 @@ func set_sad():
 # Connect the body_entered signal
 	
 func _process(delta):
-	$SmilieSprite.self_modulate.a -= 0.4 *delta
-	position += Vector2.UP *delta *30
-	if existence_timer > 0 :
+
+	position += Vector2.UP *delta *55
+	if existence_timer > 1 :
+		existence_timer -=delta
+	elif existence_timer > 0:
+		$SmilieSprite.self_modulate.a -= 1.2 *delta
 		existence_timer -=delta
 	else:
 		queue_free()
