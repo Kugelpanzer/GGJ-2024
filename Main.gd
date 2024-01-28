@@ -1,6 +1,7 @@
 extends Node
 
 @export var hoop_scene: PackedScene
+@export var smilie_scene: PackedScene
 @export var water_height =540
 @export var hoop_comp = Array()
 @export var x_offset = 100
@@ -89,10 +90,18 @@ func on_hoop_failed():
 		spawn_sad_face()
 
 func spawn_happy_face():
-	var face_type = randi_range(1,3)
+	print("spawn smilie happy")
+	var smilie = smilie_scene.instantiate()
+	smilie.position=Vector2(randi_range(100,1880),randi_range(200,300))
+	smilie.set_happy()
+	add_child(smilie)
 
 func spawn_sad_face():
-	var face_type = randi_range(1,3)
+	print("spawn smilie sad")
+	var smilie = smilie_scene.instantiate()
+	smilie.position=Vector2(randi_range(100,1880),randi_range(200,300))
+	smilie.set_sad()
+	add_child(smilie)
 
 func _on_MobTimer_timeout():
 	# Create a new instance of the Mob scene.
