@@ -7,15 +7,15 @@
 [ext_resource type="Script" path="res://Fail2.gd" id="5_yml24"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1me4v"]
-radius = 5.06828
-height = 45.2247
+radius = 9.83024
+height = 87.5785
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6g3pm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5kxfd"]
 
 [node name="HoopTest" type="Node2D"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_jvbjo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -28,7 +28,8 @@ rotation = -3.14159
 scale = Vector2(1.49548, 1.11556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Success"]
-scale = Vector2(1.87041, -2.21123)
+position = Vector2(0.334341, -2.68924)
+scale = Vector2(1.24709, -1.71605)
 shape = SubResource("CapsuleShape2D_1me4v")
 script = ExtResource("3_a0oh1")
 
@@ -49,5 +50,6 @@ shape = SubResource("CapsuleShape2D_5kxfd")
 script = ExtResource("5_yml24")
 
 [connection signal="area_entered" from="Success" to="Success/CollisionShape2D" method="_on_success_area_entered"]
+[connection signal="area_exited" from="Success" to="Success/CollisionShape2D" method="_on_success_area_exited"]
 [connection signal="area_entered" from="Fail1" to="Fail1/CollisionShape2D" method="_on_fail_1_area_entered"]
 [connection signal="area_entered" from="Fail2" to="Fail2/CollisionShape2D" method="_on_fail_2_area_entered"]

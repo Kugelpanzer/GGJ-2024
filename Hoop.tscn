@@ -69,9 +69,9 @@ rotation = 1.5708
 shape = SubResource("2")
 
 [node name="Success" type="CollisionShape2D" parent="."]
-position = Vector2(4, 6.82121e-13)
+position = Vector2(3, 2)
 rotation = 1.5708
-scale = Vector2(13.9963, 1.63406)
+scale = Vector2(20.0553, 1.94123)
 shape = SubResource("2")
 script = ExtResource("7_e8c3r")
 
