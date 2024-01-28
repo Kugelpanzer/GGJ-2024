@@ -19,14 +19,14 @@ func game_over():
 	$MobTimer.stop()
 	$HUD.show_game_over()
 	$Music.stop()
-	$DeathSound.play()
+	$LoseSound.play()
 
 func game_won():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_won()
 	$Music.stop()
-	#$WinSound.play()
+	$WinSound.play()
 
 func new_game():
 	#get_tree().call_group(&"mobs", &"queue_free")
@@ -37,7 +37,6 @@ func new_game():
 	#$HUD.update_score(score)
 	#$HUD.show_message("Get Ready")
 	$Music.play()
-
 
 func _process(delta):
 	if $Dolphin.position.y < water_height:

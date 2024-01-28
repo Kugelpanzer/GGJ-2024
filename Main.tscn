@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyfwty2q3rdse"]
+[gd_scene load_steps=20 format=3 uid="uid://cyfwty2q3rdse"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dur406lftmn7t" path="res://HoopTest.tscn" id="2_eygkc"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://53ek8a7xfpkw" path="res://Smilie.tscn" id="3_mpo2x"]
 [ext_resource type="Texture2D" uid="uid://dbbu7cthhpf2s" path="res://art/zidTileset.png" id="3_xmxa7"]
 [ext_resource type="PackedScene" uid="uid://ccqoreueuxdb7" path="res://HUD.tscn" id="4"]
-[ext_resource type="AudioStream" uid="uid://q2pf4fr8d0ks" path="res://art/House In a Forest Loop.ogg" id="5"]
 [ext_resource type="AudioStream" uid="uid://dw26fpygeag8o" path="res://art/gameover.wav" id="6"]
 [ext_resource type="PackedScene" uid="uid://bpcm67gm8sok3" path="res://Water.tscn" id="7_bbi0j"]
 [ext_resource type="Script" path="res://Water.gd" id="8_ofdqp"]
 [ext_resource type="Script" path="res://SpawnPoint.gd" id="9_6f7yk"]
+[ext_resource type="AudioStream" uid="uid://c6kgrjlgexhw5" path="res://art/Acid_Bubble.wav" id="10_34uyr"]
 [ext_resource type="Texture2D" uid="uid://dqf6y71dmudty" path="res://art/tamniTalas.png" id="13_3wij7"]
+[ext_resource type="AudioStream" uid="uid://da04urlj6jtmc" path="res://art/Win_sound.wav" id="14_xxu2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyqbi"]
 texture = ExtResource("3_xmxa7")
@@ -98,9 +99,9 @@ z_index = 9
 [node name="HUD" parent="." instance=ExtResource("4")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5")
+stream = ExtResource("10_34uyr")
 
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6")
 
 [node name="HoopPath" type="Path2D" parent="."]
@@ -141,6 +142,9 @@ z_index = 15
 position = Vector2(1441, 534)
 scale = Vector2(4, 4)
 texture = ExtResource("13_3wij7")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_xxu2b")
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
