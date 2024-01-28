@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccqoreueuxdb7"]
+[gd_scene load_steps=5 format=3 uid="uid://ccqoreueuxdb7"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cv3b0420e10v2" path="res://art/startDugme.png" id="2_u8rw7"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_fopy7"]
 action = &"start_game"
@@ -44,12 +45,14 @@ anchor_bottom = 1.0
 offset_left = -90.0
 offset_top = -200.0
 offset_right = 90.0
-offset_bottom = -100.0
+offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 60
 shortcut = SubResource("4")
-text = "Start"
+icon = ExtResource("2_u8rw7")
+icon_alignment = 1
+expand_icon = true
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 3.0
