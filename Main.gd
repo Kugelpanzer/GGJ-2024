@@ -8,6 +8,7 @@ extends Node
 var score
 
 var current_hoop_list : Array = []
+var list_of_points: Array = []
 
 func game_over():
 	$ScoreTimer.stop()
@@ -44,10 +45,11 @@ func _on_MobTimer_timeout():
 	current_hoop_list.append(hoop)
 
 	# Choose a random location on Path2D.
-	var hoop_spawn_location = get_node(^"HoopPath/HoopSpawnLocation")
-	hoop_spawn_location.progress = randi()
-
-	hoop.position = hoop_spawn_location.position
+	#var hoop_spawn_location = get_node(^"HoopPath/HoopSpawnLocation")
+	#hoop_spawn_location.progress = randi()
+	var point = list_of_points.pick_random()
+	point.add_object(hoop)
+	hoop.position = point.position#hoop_spawn_location.position
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(hoop)
