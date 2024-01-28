@@ -11,7 +11,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_yqfxe"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 324, 179, 0, 0, 0, 0, 234, 502, 0, 0, 0, 0, 1007, 260, 0, 0, 0, 0, 1733, 287, 0, 0, 0, 0, 1415, 93, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 242, 148, 0, 0, 0, 0, 354, 302, 0, 0, 0, 0, 989, 231, 0, 0, 0, 0, 1631, 297, 0, 0, 0, 0, 1743, 155, 0, 0, 0, 0, 247, 148)
 }
 point_count = 6
 
@@ -26,6 +26,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -58,8 +61,8 @@ stream = ExtResource("6")
 curve = SubResource("Curve2D_yqfxe")
 
 [node name="HoopSpawnLocation" type="PathFollow2D" parent="HoopPath"]
-position = Vector2(324, 179)
-rotation = 1.84254
+position = Vector2(242, 148)
+rotation = 0.942
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
