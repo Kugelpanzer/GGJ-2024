@@ -24,6 +24,8 @@ func _ready():
 
 func _process(delta):
 	if in_water:
+		if $AnimatedSprite2D.get_animation() != "swim":
+			$AnimatedSprite2D.play("swim")
 		#find direction from dolphin to cursor, acceleration is in that direction
 		var direction_to_cursor = get_viewport().get_mouse_position() - position
 		var acceleration_vector = direction_to_cursor.normalized() * acceleration
@@ -40,6 +42,8 @@ func _process(delta):
 		if velocity.length() < min_speed:
 			velocity = velocity.normalized() * min_speed
 	else:
+		if $AnimatedSprite2D.get_animation() != "jump":
+			$AnimatedSprite2D.play("jump")
 		#out of water just fall down
 		velocity += Vector2.DOWN * gravity_acceleration * delta
 
