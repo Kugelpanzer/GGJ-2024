@@ -28,7 +28,7 @@ grow_vertical = 2
 color = Color(0.509804, 0.509804, 0.509804, 1)
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 3.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
