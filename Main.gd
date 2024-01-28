@@ -30,7 +30,7 @@ func game_won():
 
 func new_game():
 	#get_tree().call_group(&"mobs", &"queue_free")
-	score = -60
+	score = 0
 	hoops_passed = 0
 	$Dolphin.start($StartPosition.position)
 	$StartTimer.start()
